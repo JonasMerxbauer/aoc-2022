@@ -1,6 +1,5 @@
 
 const a = () => {
-
     const fs = require('fs');
 
     const txtFile = "data.txt";
@@ -26,8 +25,7 @@ const a = () => {
 
     const sortedElves = elves.sort((first, second) => second - first);
     
-    console.warn(sortedElves[0]);
-
+    console.log(sortedElves[0]);
 }
 
 a();

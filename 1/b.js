@@ -1,16 +1,13 @@
 
 const b = () => {
-
     const fs = require('fs');
 
-    let txtFile = "data.txt";
-    let str = fs.readFileSync(txtFile,'utf8');
+    const txtFile = "data.txt";
+    const str = fs.readFileSync(txtFile,'utf8');
 
-    let data = str.split('\r\n');
+    const data = str.split('\r\n');
 
-    let elves = [];
-
-
+    const elves = [];
     let currentElf = 0;
     let index = 0;
 
@@ -25,13 +22,10 @@ const b = () => {
     });
     
     elves[index] = currentElf;
-    currentElf = 0;
-
 
     let sortedElves = elves.sort((a, b) => b - a);
     
-    console.warn(sortedElves[0] + sortedElves[1] + sortedElves[2]);
-
+    console.log(sortedElves[0] + sortedElves[1] + sortedElves[2]);
 }
 
 b();
