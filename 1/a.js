@@ -1,31 +1,29 @@
 
-const a = () => {
-    const fs = require('fs');
+const fs = require('fs');
 
-    const txtFile = "data.txt";
-    const str = fs.readFileSync(txtFile,'utf8');
 
-    const data = str.split('\r\n');
+const txtFile = "data.txt";
+const str = fs.readFileSync(txtFile,'utf8');
 
-    const elves = [];
-    let currentElf = 0;
-    let index = 0;
+const data = str.split('\r\n');
 
-    data.forEach((line, i) => {
-        if (line !== '') {
-            currentElf += Number(line);
-        } else {
-            elves[index] = currentElf;
-            currentElf = 0;
-            index++;
-        }
-    });
-    
-    elves[index] = currentElf;
+const elves = [];
+let currentElf = 0;
+let index = 0;
 
-    const sortedElves = elves.sort((first, second) => second - first);
-    
-    console.log(sortedElves[0]);
-}
+data.forEach((line) => {
+    if (line !== '') {
+        currentElf += Number(line);
+    } else {
+        elves[index] = currentElf;
+        currentElf = 0;
+        index++;
+    }
+});
 
-a();
+elves[index] = currentElf;
+
+const sortedElves = elves.sort((first, second) => second - first);
+
+console.log(sortedElves.length)
+console.log(sortedElves[0]);
