@@ -25,5 +25,4 @@ elves[index] = currentElf;
 
 const sortedElves = elves.sort((first, second) => second - first);
 
-console.log(sortedElves.length)
 console.log(sortedElves[0]);

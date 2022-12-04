@@ -9,7 +9,9 @@ const data = str.split('\r\n');
 const opponentRPS = ["A", "B", "C"]; // Rock, Paper, Scissors
 const playerRPS = ["X", "Y", "Z"]; // Rock, Paper, Scissors
 
-const results = data.map((line) => {
+let sum = 0;
+
+data.forEach((line) => {
     const lineData = line.split(' ');
 
     let score = playerRPS.indexOf(lineData[1]) + 1;
@@ -22,9 +24,7 @@ const results = data.map((line) => {
         score += 6;
     }
 
-    return score;
+    sum += score;
 });
-
-const sum = results.reduce((a, b) => a + b, 0);
 
 console.log(sum);
